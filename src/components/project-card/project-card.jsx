@@ -1,48 +1,58 @@
 import { useRef } from "react";
+import CustomButton from "../resued-components/custom-button/custom-button";
 import "./project-card.css";
+import { useMediaQuery } from "react-responsive";
 
-const ProjectCard = () => {
+const ProjectCard = ({ data }) => {
   const projectCardRef = useRef();
   const effectRef = useRef();
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1224px)" });
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   const add = (e) => {
     const { pageX, pageY } = e;
-    // console.log(pageX, pageY);
-
     const { offsetTop, offsetLeft } = projectCardRef.current;
-
-    console.log(offsetTop, offsetLeft);
-
     const x = pageX - offsetLeft;
     const y = pageY - offsetTop;
 
-    effectRef.current.style.cssText = `left: ${x}px; top: ${y}px`;
+    if (effectRef.current)
+      effectRef.current.style.cssText = `left: ${x}px; top: ${y}px`;
   };
+
+  const { images, liveLink, codeLink } = data;
 
   return (
     <figure ref={projectCardRef} onMouseEnter={add} className="project-card">
       <div className="project-thumbnail">
-        <div className="d-flex jusc-between options">
-          <button>Code</button>
-          <button>Live demo</button>
-        </div>
-        <div className="effect" ref={effectRef}></div>
-        <img
-          src="https://images.unsplash.com/photo-1627727240040-c07d7f6f24b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=670&q=80"
-          alt="thumbnail"
-        />
+        {isBigScreen && (
+          <>
+            <div className="d-flex jusc-around options">
+              <CustomButton redirect={codeLink} name="Code" />
+              <CustomButton redirect={liveLink} name="Live Demo" />
+            </div>
+            <span className="effect" ref={effectRef} />
+          </>
+        )}
+        <img src={images && images.props.src} alt="thumbnail" />
       </div>
 
       <figcaption className="about-project">
         <div className="d-flex project-information">
           <div className="project-type-icon"></div>
-          <div>
+          <div className="content">
             <h1>Social media website</h1>
             <h2>
               C C++ CSS JAVASCRIPT | <span>Website</span>
             </h2>
           </div>
         </div>
+        {isTabletOrMobile && (
+          <div className="d-flex jusc-between">
+            <CustomButton name="Code" />
+            <CustomButton name="Live Demo" />
+          </div>
+        )}
       </figcaption>
     </figure>
   );
