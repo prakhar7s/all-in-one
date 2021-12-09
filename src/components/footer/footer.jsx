@@ -6,6 +6,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import CodeIcon from "@mui/icons-material/Code";
 import PersonIcon from "@mui/icons-material/Person";
+import { Link } from "react-router-dom";
 
 const socialMediaAccounts = [
   {
@@ -49,23 +50,23 @@ const localLinks = [
   {
     id: "12342",
     name: "About",
-    path: "/About",
+    path: "/about",
   },
   {
     id: "12343",
     name: "Blog",
-    path: "/Blog",
+    path: "/blogs",
   },
 
   {
     id: "12344",
     name: "Projects",
-    path: "/Projects",
+    path: "/projects",
   },
   {
     id: "12345",
     name: "Resume",
-    path: "/Resume",
+    path: "/resume",
   },
 ];
 
@@ -75,14 +76,14 @@ const Footer = () => {
       <div className="row pt-4">
         <div className="local-links d-flex justify-content-center align-items-center flex-gap my-3">
           {localLinks.map((link) => (
-            <a
+            <Link
               key={link.id}
               title={link.name}
-              href={link.path}
+              to={link.path}
               className="font-sans-pro"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="social-media-accounts d-flex flex-gap justify-content-center align-items-center my-2">
@@ -107,7 +108,7 @@ const Footer = () => {
             href="mailto:prakharshrivastava971@gmail.com"
             target="_blank"
             rel="noreferrer"
-            className="mx-2 font-sans-pro special-link"
+            className="mx-2 special-link"
           >
             prakharshrivastava971@gmail.com
           </a>
