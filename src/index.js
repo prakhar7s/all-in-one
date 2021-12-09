@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
-  <Router>
+  <Router basename="/all-in-one">
     <React.StrictMode>
       <App />
     </React.StrictMode>
