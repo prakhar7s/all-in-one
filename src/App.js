@@ -1,14 +1,13 @@
-import "./App.css";
-import ProjectCard from "./components/project-card/project-card";
-
-import { reactProjects } from "./assets/project-data/react-projects.js";
+import Footer from "./components/footer/footer";
+import Header from "./components/header/header";
+import MainRoutes from "./routes/routes";
 
 function App() {
   return (
-    <div className="projects">
-      {reactProjects.map((reactProject) => (
-        <ProjectCard key={reactProject.projectID} data={reactProject} />
-      ))}
+    <div className="app">
+      <Header />
+      <MainRoutes />
+      <Footer />
     </div>
   );
 }

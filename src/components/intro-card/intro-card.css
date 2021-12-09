@@ -1,0 +1,14 @@
+.intro-card {
+  border: 1px solid #eee;
+}
+
+.name {
+  color: #455a64;
+  font-weight: 600 !important;
+  font-size: clamp(1.2em, 3.5vw, 9em);
+}
+.about-me {
+  font-weight: 400;
+  line-height: 1.6;
+  color: #455a64;
+}
