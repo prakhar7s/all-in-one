@@ -108,7 +108,7 @@ const Footer = () => {
             href="mailto:prakharshrivastava971@gmail.com"
             target="_blank"
             rel="noreferrer"
-            className="mx-2 special-link"
+            className="mx-1 pt-1 special-link"
           >
             prakharshrivastava971@gmail.com
           </a>

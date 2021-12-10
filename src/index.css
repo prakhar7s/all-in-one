@@ -11,9 +11,9 @@ html,
 body {
   overflow-x: hidden;
 }
-.app {
+/* .app {
   padding-top: 70px;
-}
+} */
 
 /* fonts */
 .font-playfair {

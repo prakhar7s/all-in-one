@@ -1,45 +1,32 @@
 header {
   box-shadow: 0 4px 6px rgb(38 50 56 / 10%);
   z-index: 9999;
-  background: var(--primary-color);
+  transition: 0.2s all;
 }
 
 header .name-sm {
-  font-size: clamp(1.2em, 2vw, 2em);
+  font-size: clamp(1.6em, 2.4vw, 2.4em);
   font-weight: 400;
-  color: #2bff00;
-  animation: color-rotate 4s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  color: rgba(var(--headerColor), 0.9);
 }
 
 .header-links a {
   margin: 10px;
   padding: 6px 10px;
-  color: #37474f90;
+  color: rgba(var(--headerColor), 0.9);
   text-transform: uppercase;
   font-size: 14px;
   transition: 0.3s border;
   border: 1px solid transparent;
-  border-radius: 7px;
+  border-radius: 6px;
+  font-weight: 600;
 }
 
 .header-links a:hover {
-  border-color: #37474f30;
-  color: #37474f90;
+  border-color: rgba(var(--headerColor), 0.5);
+  color: rgba(var(--headerColor), 0.9);
 }
 
 .header-links a.active {
-  border-color: #37474f;
-}
-
-@keyframes color-rotate {
-  from {
-    filter: hue-rotate(0deg);
-    opacity: 0;
-  }
-  to {
-    filter: hue-rotate(360deg);
-    opacity: 1;
-  }
+  border-color: rgba(var(--headerColor), 1);
 }
