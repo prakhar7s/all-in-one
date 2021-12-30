@@ -2,9 +2,12 @@ import "./cover-image.css";
 
 const CoverImage = ({ src }) => {
   return (
-    <div className="cover-image-div">
-      <img src={src} alt="cover" loading="lazy" />
-    </div>
+    <div
+      className="bg-gray position-absolute w-100 h-100"
+      style={{
+        background: "black",
+      }}
+    ></div>
   );
 };
 
